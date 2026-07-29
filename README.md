@@ -1,17 +1,35 @@
-# Civil-Service-Exam-Preparation-Workbench
-✨ Features | 核心功能
-- ✅ Full-process Study Management — Daily study plan, progress tracking, weak module analysis
-- ✅ Five Modules of Administrative Aptitude Test — Language, Judgment, Data Analysis, Quantity, Common Sense
-- ✅ Complete申论 Training System — Standard expressions, essay frameworks, policy hotspots, official document formats
-- ✅ Automatic Error Review System — Error classification, regular review, weakness correction
-- ✅ Real-time Current Politics Update — Monthly/annual exam-focused current affairs summary
-- ✅ Mock Exam Analysis — Score diagnosis, module accuracy statistics, targeted improvement
+🔥 一站式 AI 公考备考工作台｜国考/省考 全流程闭环备考系统
 
-🎯 Suitable For | 适用人群
-- National Civil Service Examination (国考) candidates
-- Provincial Civil Service Examination (省考) candidates
-- Zero-based / inefficient review learners
-- Candidates who need systematic and closed-loop preparation
+📌 Project Introduction｜项目介绍
+Civil Service Exam Workbench 是基于 WorkBuddy 搭建的 全自动、全维度、闭环式公考备考工作台。整合行测、申论、刷题训练、错题复盘、时政积累、每日规划、模考诊断全部备考环节，告别碎片化学习，实现系统化高效备考。
+适配 国考、各省省考，零基础、冲刺阶段、长期备考均适用。
+
+📖 行测专项系统
+- 言语理解、判断推理、资料分析、数量关系、常识判断 五大模块全覆盖
+- 高频考点总结、易错点归纳、解题技巧速记
+- 针对性薄弱点强化训练
+📝 申论精进系统
+- 每日规范词、标准金句、热点话题积累
+- 归纳概括、综合分析、提出对策、公文写作全套框架
+- 大作文立意、分论点、结构优化训练
+📅 智能备考规划
+- 自动生成每日/每周/月度备考计划
+- 学习进度追踪、薄弱模块统计
+- 自适应调整学习强度与重点
+🔁 错题复盘体系
+- 自动归类错题原因、对应考点
+- 周期性复盘机制，杜绝重复踩坑
+- 生成个人薄弱点报告
+🌐 时政自动更新
+- 公考高频时政、会议政策、热点事件持续更新
+- 适配行测常识、申论素材双重使用
+- 失分原因定位、针对性补强方案
+
+🎯 Target Users｜适用人群
+- 国考、省考全职备考考生
+- - 零基础公考入门学习者
+- 备考效率低、缺乏系统规划的考生
+
 
 📄 License
 This project is open source for personal learning. Please do not use it for commercial purposes.
