@@ -31,7 +31,7 @@ Civil Service Exam Workbench 是基于 WorkBuddy 搭建的 全自动、全维度
 
 🎯 Target Users｜适用人群
 - 国考、省考全职备考考生
-- - 零基础公考入门学习者
+- 零基础公考入门学习者
 - 备考效率低、缺乏系统规划的考生
 
 
