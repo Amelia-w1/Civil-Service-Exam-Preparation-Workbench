@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="card" wx:for="{{list}}" wx:key="id">
+    <view class="row">
+      <view style="font-weight:700;font-size:32rpx;color:#7E5FA0">总分正确率 {{item.overall}}%</view>
+      <text class="muted">{{item.date}}</text>
+    </view>
+    <view class="row" style="margin-top:10rpx;flex-wrap:wrap">
+      <text class="tag" wx:for="{{item.scores}}" wx:for-item="s" wx:key="module">{{s.module}} {{s.rate}}%</text>
+    </view>
+    <view wx:if="{{item.plan}}" class="muted" style="margin-top:8rpx">复盘：{{item.plan}}</view>
+  </view>
+  <view wx:if="{{!list.length}}" class="placeholder">还没有模考记录</view>
+
+  <view class="btn" bindtap="toggleAdd">{{showAdd?'收起':'+ 记录模考'}}</view>
+  <view class="card" wx:if="{{showAdd}}">
+    <view class="card-title">各模块对题/题量</view>
+    <view wx:for="{{mods}}" wx:key="*this" class="row" style="margin-bottom:12rpx">
+      <view style="width:160rpx">{{item}}</view>
+      <input class="inp2" placeholder="对" data-m="{{item}}" data-k="right" bindinput="onScore" value="{{scores[item].right}}"/>
+      <text class="muted">/</text>
+      <input class="inp2" placeholder="总" data-m="{{item}}" data-k="total" bindinput="onScore" value="{{scores[item].total}}"/>
+    </view>
+    <textarea class="inp" placeholder="复盘计划（选填）" bindinput="onPlan" value="{{plan}}" style="height:100rpx"/>
+    <view class="btn" style="margin-top:16rpx" bindtap="save">保存模考</view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+.days { line-height: 1.1; }
+checkbox { transform: scale(0.8); }

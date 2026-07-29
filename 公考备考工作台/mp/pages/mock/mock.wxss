@@ -1,0 +1,9 @@
+.inp {
+  width: 100%; box-sizing: border-box; background: #F7F3FA;
+  border: 2rpx solid var(--line); border-radius: 12rpx;
+  padding: 18rpx; margin-top: 12rpx; font-size: 28rpx;
+}
+.inp2 {
+  width: 120rpx; background: #F7F3FA; border: 2rpx solid var(--line);
+  border-radius: 10rpx; padding: 10rpx; text-align: center; font-size: 28rpx;
+}

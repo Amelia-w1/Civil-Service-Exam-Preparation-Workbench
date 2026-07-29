@@ -1,0 +1,16 @@
+{
+  "miniprogramRoot": "./",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "projectname": "gongkao-workbench",
+  "description": "公务员备考工作台 · 微信小程序（云开发）",
+  "appid": "请替换为你自己的小程序AppID",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest"
+}

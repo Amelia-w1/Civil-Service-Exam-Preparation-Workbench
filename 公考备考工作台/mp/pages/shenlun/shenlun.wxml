@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="card">
+    <view class="card-title">今日规范词（自动轮播）</view>
+    <view wx:for="{{dailyWords}}" wx:key="standard" class="list-item">
+      <view><text class="tag">{{item.topic}}</text> {{item.oral}}</view>
+      <view class="muted" style="margin-top:4rpx">规范：{{item.standard}}</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">今日金句</view>
+    <view class="ok" style="line-height:1.6">📜 {{dailyQuote.text}}</view>
+    <view class="muted" style="margin-top:6rpx">{{dailyQuote.topic}} · {{dailyQuote.pos}}</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">我的规范词收藏（{{myWords.length}}）</view>
+    <view wx:for="{{myWords}}" wx:key="standard" class="list-item">
+      <view><text class="tag">{{item.topic}}</text> {{item.oral}}</view>
+      <view class="muted" style="margin-top:4rpx">规范：{{item.standard}}</view>
+    </view>
+    <view wx:if="{{!myWords.length}}" class="placeholder">暂无收藏</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">我的金句收藏（{{myQuotes.length}}）</view>
+    <view wx:for="{{myQuotes}}" wx:key="text" class="list-item">📜 {{item.text}} <text class="muted">（{{item.topic}}）</text></view>
+    <view wx:if="{{!myQuotes.length}}" class="placeholder">暂无收藏</view>
+  </view>
+
+  <view class="btn" bindtap="toggleAdd">{{showAdd?'收起':'+ 添加收藏'}}</view>
+  <view class="card" wx:if="{{showAdd}}">
+    <view class="row" style="margin-bottom:14rpx">
+      <text class="tag" bindtap="setKind" data-k="word">规范词</text>
+      <text class="tag" bindtap="setKind" data-k="quote">金句</text>
+    </view>
+    <block wx:if="{{kind==='word'}}">
+      <input class="inp" placeholder="主题" data-k="topic" bindinput="onInput" value="{{f.topic}}"/>
+      <input class="inp" placeholder="口语化表达" data-k="oral" bindinput="onInput" value="{{f.oral}}"/>
+      <input class="inp" placeholder="规范表达" data-k="standard" bindinput="onInput" value="{{f.standard}}"/>
+    </block>
+    <block wx:else>
+      <input class="inp" placeholder="主题" data-k="topic" bindinput="onInput" value="{{f.topic}}"/>
+      <input class="inp" placeholder="金句内容" data-k="text" bindinput="onInput" value="{{f.text}}"/>
+      <input class="inp" placeholder="适用位置（开头/分论点/结尾）" data-k="pos" bindinput="onInput" value="{{f.pos}}"/>
+    </block>
+    <view class="btn" style="margin-top:16rpx" bindtap="save">保存</view>
+  </view>
+</view>

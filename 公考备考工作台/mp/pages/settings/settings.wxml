@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="card">
+    <view class="card-title">个人资料</view>
+    <view class="list-item">姓名<input class="inp-r" placeholder="昵称" value="{{p.name}}" data-k="name" bindinput="onInput"/></view>
+    <view class="list-item">报考目标<input class="inp-r" placeholder="国考+省考" value="{{p.examTarget}}" data-k="examTarget" bindinput="onInput"/></view>
+    <view class="list-item">学习阶段<input class="inp-r" placeholder="基础学习中" value="{{p.stage}}" data-k="stage" bindinput="onInput"/></view>
+    <view class="list-item">每日时长<input class="inp-r" placeholder="3-4" value="{{p.dailyHours}}" data-k="dailyHours" bindinput="onInput"/></view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">考试日期</view>
+    <picker mode="date" value="{{p.startDate}}" bindchange="onDate" data-k="startDate">
+      <view class="list-item">开始日期 <text class="muted">{{p.startDate||'选择'}} ›</text></view>
+    </picker>
+    <picker mode="date" value="{{p.gkDate}}" bindchange="onDate" data-k="gkDate">
+      <view class="list-item">国考日期 <text class="muted">{{p.gkDate||'选择'}} ›</text></view>
+    </picker>
+    <picker mode="date" value="{{p.skDate}}" bindchange="onDate" data-k="skDate">
+      <view class="list-item">省考日期 <text class="muted">{{p.skDate||'选择'}} ›</text></view>
+    </picker>
+  </view>
+
+  <view class="card">
+    <view class="card-title">AI 识别（选填）</view>
+    <view class="list-item">OCR Key<input class="inp-r" placeholder="填云端API Key后启用拍照识别" value="{{p.ocrKey}}" data-k="ocrKey" bindinput="onInput"/></view>
+  </view>
+
+  <view class="btn" bindtap="save">保存</view>
+</view>

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="card">
+    <view class="card-title">题库总览</view>
+    <view class="muted">当前题库共 {{totalQuestions}} 题，点模块进入专项练习</view>
+  </view>
+
+  <view class="card" wx:for="{{modules}}" wx:key="name" bindtap="openModule" data-m="{{item.name}}" hover-class="card-hover">
+    <view class="row">
+      <view style="font-weight:600;font-size:30rpx">{{item.name}}</view>
+      <view class="muted">{{item.count}} 题 ›</view>
+    </view>
+    <view class="row" style="margin-top:8rpx">
+      <view class="tag">{{item.status}}</view>
+      <view style="flex:1">
+        <text class="tag weak" wx:for="{{item.weak}}" wx:for-item="w" wx:key="*this" style="margin-left:6rpx">{{w}}</text>
+      </view>
+    </view>
+  </view>
+</view>

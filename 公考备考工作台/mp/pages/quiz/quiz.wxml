@@ -1,0 +1,49 @@
+<view class="container" wx:if="{{!finished}}">
+  <!-- 控制条 -->
+  <view class="card row">
+    <picker mode="selector" range="{{mods}}" value="{{modIndex}}" bindchange="changeMod">
+      <view class="btn ghost sm">模块：{{mods[modIndex]}} ▾</view>
+    </picker>
+    <view>
+      <text class="tag" bindtap="setMode" data-mode="random">随机</text>
+      <text class="tag" bindtap="setMode" data-mode="wrong">错题</text>
+      <text class="tag" bindtap="setMode" data-mode="sequential">顺序</text>
+    </view>
+  </view>
+
+  <!-- 进度 -->
+  <view class="muted" style="text-align:center">第 {{idx+1}} / {{total}} 题 · 已答 {{done}}</view>
+
+  <!-- 题目 -->
+  <view class="card" wx:if="{{cur}}">
+    <view class="row" style="margin-bottom:14rpx">
+      <text class="tag">{{cur.module}}</text>
+      <text class="tag">{{cur.type}}</text>
+    </view>
+    <view style="font-size:30rpx;line-height:1.6">{{cur.q}}</view>
+
+    <view wx:for="{{cur.options}}" wx:key="index" class="opt {{selected===index?'sel':''}} {{answered&&index===['A','B','C','D'].indexOf(cur.answer)?'correct':''}}" bindtap="selectOpt" data-i="{{index}}">
+      {{['A','B','C','D'][index]}}. {{item}}
+    </view>
+
+    <view style="margin-top:20rpx" wx:if="{{!answered}}">
+      <view class="btn" bindtap="submit">提交</view>
+    </view>
+
+    <view wx:if="{{answered}}">
+      <view class="{{right?'ok':'warn'}}">{{right?'✅ 答对了':'❌ 答错了，正确答案见解析'}}</view>
+      <view class="muted" style="margin-top:10rpx">考点：{{point}}</view>
+      <view style="margin-top:8rpx;line-height:1.6">解析：{{parse}}</view>
+      <view class="btn" style="margin-top:20rpx" bindtap="next">{{idx+1>=total?'完成':'下一题'}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 完成页 -->
+<view class="container" wx:if="{{finished}}">
+  <view class="card" style="text-align:center">
+    <view style="font-size:40rpx;font-weight:700;color:#9B7CB8">本轮完成！</view>
+    <view class="muted" style="margin-top:10rpx">共答 {{done}} 题，答错的已自动进入错题本</view>
+    <view class="btn" style="margin-top:30rpx" bindtap="restart">再来一轮</view>
+  </view>
+</view>

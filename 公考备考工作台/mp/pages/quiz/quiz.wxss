@@ -1,0 +1,9 @@
+.opt {
+  padding: 20rpx 24rpx;
+  border: 2rpx solid var(--line);
+  border-radius: 12rpx;
+  margin-top: 16rpx;
+  font-size: 28rpx;
+}
+.opt.sel { border-color: #9B7CB8; background: #F4EEF9; }
+.opt.correct { border-color: #5AAE8C; background: #E9F5EF; }

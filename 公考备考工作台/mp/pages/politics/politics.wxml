@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="card" wx:for="{{list}}" wx:key="_id">
+    <view class="row">
+      <text class="tag">{{item.cat||'时政'}}</text>
+      <text class="muted">{{item.date}}</text>
+    </view>
+    <view style="font-weight:600;margin-top:8rpx">{{item.event}}</view>
+    <view class="muted" style="margin-top:4rpx">要点：{{item.point}}</view>
+    <view wx:if="{{item.angle}}" class="muted">角度：{{item.angle}}</view>
+  </view>
+  <view wx:if="{{!list.length}}" class="placeholder">暂无时政，点下面添加</view>
+
+  <view class="btn" bindtap="toggleAdd">{{showAdd?'收起':'+ 添加时政'}}</view>
+  <view class="card" wx:if="{{showAdd}}">
+    <input class="inp" placeholder="分类（如 科技/经济）" data-k="cat" bindinput="onInput" value="{{f.cat}}"/>
+    <input class="inp" placeholder="事件" data-k="event" bindinput="onInput" value="{{f.event}}"/>
+    <input class="inp" placeholder="核心要点" data-k="point" bindinput="onInput" value="{{f.point}}"/>
+    <input class="inp" placeholder="备考角度" data-k="angle" bindinput="onInput" value="{{f.angle}}"/>
+    <view class="btn" style="margin-top:16rpx" bindtap="save">保存</view>
+  </view>
+</view>

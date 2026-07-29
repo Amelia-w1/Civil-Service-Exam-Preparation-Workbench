@@ -1,0 +1,53 @@
+{
+  "totalDays": 1,
+  "totalQuestions": 40,
+  "masteredPoints": 0,
+  "totalErrors": 3,
+  "mockCount": 0,
+  "lastStudyDate": "2026-07-29",
+  "moduleProgress": {
+    "言语理解": {
+      "status": "进行中",
+      "mastered": 0,
+      "weak": [
+        "逻辑填空·成语"
+      ]
+    },
+    "判断推理": {
+      "status": "未启动",
+      "mastered": 0,
+      "weak": []
+    },
+    "资料分析": {
+      "status": "未启动",
+      "mastered": 0,
+      "weak": []
+    },
+    "数量关系": {
+      "status": "未启动",
+      "mastered": 0,
+      "weak": []
+    },
+    "常识判断": {
+      "status": "进行中",
+      "mastered": 0,
+      "weak": [
+        "文史·四书五经"
+      ]
+    }
+  },
+  "today": {
+    "date": "2026-07-29",
+    "completed": [
+      "t5",
+      "t1",
+      "t2",
+      "t3",
+      "t4"
+    ],
+    "questions": 40
+  },
+  "checkIns": [
+    "2026-07-29"
+  ]
+}

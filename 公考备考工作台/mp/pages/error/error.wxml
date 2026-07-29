@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="card row">
+    <view style="font-weight:600">错题 {{errors.length}} 条</view>
+    <view class="btn sm" bindtap="toggleAdd">{{showAdd?'收起':'+ 录入'}}</view>
+  </view>
+
+  <!-- 录入面板 -->
+  <view class="card" wx:if="{{showAdd}}">
+    <view class="card-title">新增错题</view>
+    <picker mode="selector" range="{{mods}}" value="{{modIndex}}" bindchange="changeMod">
+      <view class="btn ghost sm" style="margin-bottom:14rpx">模块：{{mods[modIndex]}} ▾</view>
+    </picker>
+    <input class="inp" placeholder="考点（如：基期量公式）" value="{{form.point}}" bindinput="onPoint"/>
+    <picker mode="selector" range="{{reasons}}" value="{{reasonIndex}}" bindchange="changeReason">
+      <view class="btn ghost sm" style="margin:14rpx 0">错因：{{reasons[reasonIndex]}} ▾</view>
+    </picker>
+    <textarea class="inp" placeholder="备注 / 错误过程" value="{{form.note}}" bindinput="onNote" style="height:120rpx"/>
+
+    <view class="row" style="margin:14rpx 0">
+      <view class="btn ghost sm" bindtap="chooseImage">📷 拍照/选图</view>
+      <view class="btn ghost sm" bindtap="aiRecognize">🤖 AI 识别</view>
+    </view>
+    <view class="row">
+      <view wx:for="{{form.images}}" wx:key="*this" style="margin-right:12rpx">
+        <image src="{{item}}" mode="aspectFill" style="width:120rpx;height:120rpx;border-radius:10rpx" bindtap="preview" data-url="{{item}}"/>
+      </view>
+    </view>
+
+    <view class="btn" style="margin-top:20rpx" bindtap="save">保存错题</view>
+  </view>
+
+  <!-- 列表 -->
+  <view class="card" wx:for="{{errors}}" wx:key="id">
+    <view class="row">
+      <view><text class="tag">{{item.module}}</text> <text class="tag weak">{{item.reason}}</text></view>
+      <text class="muted">{{item.date}}</text>
+    </view>
+    <view style="margin-top:8rpx;font-weight:600">{{item.point}}</view>
+    <view wx:if="{{item.note}}" class="muted" style="margin-top:4rpx">{{item.note}}</view>
+    <view class="row" wx:if="{{item.images.length}}" style="margin-top:10rpx">
+      <image wx:for="{{item.images}}" wx:for-item="img" wx:key="*this" src="{{img}}" mode="aspectFill" style="width:100rpx;height:100rpx;border-radius:8rpx;margin-right:10rpx" bindtap="preview" data-url="{{img}}"/>
+    </view>
+    <view style="margin-top:12rpx" wx:if="{{!item.reviewed}}">
+      <text class="btn ghost sm" bindtap="review" data-id="{{item.id}}">标记已复盘</text>
+    </view>
+    <view wx:else class="ok" style="margin-top:10rpx">✓ 已复盘：{{item.reviewResult}}</view>
+  </view>
+
+  <view wx:if="{{!errors.length}}" class="placeholder">还没有错题，刷错题会自动进来</view>
+</view>

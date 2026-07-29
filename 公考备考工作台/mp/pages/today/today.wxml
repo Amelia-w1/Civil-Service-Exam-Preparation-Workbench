@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 倒计时 -->
+  <view class="card">
+    <view class="row">
+      <view class="card-title">距考试</view>
+      <view class="muted" bindtap="goSettings">设置 ›</view>
+    </view>
+    <view class="row" style="margin-top:10rpx">
+      <view style="flex:1;text-align:center">
+        <view class="days">{{gkLeft===null?'—':gkLeft}}</view>
+        <view class="muted">国考 {{profile.gkDate||'未设'}}</view>
+      </view>
+      <view style="flex:1;text-align:center">
+        <view class="days">{{skLeft===null?'—':skLeft}}</view>
+        <view class="muted">省考 {{profile.skDate||'未设'}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 打卡 -->
+  <view class="card row">
+    <view>
+      <view style="font-weight:600">已坚持 {{progress.totalDays||0}} 天</view>
+      <view class="muted">累计刷题 {{progress.totalQuestions||0}} 道 · 错题 {{progress.totalErrors||0}}</view>
+    </view>
+    <view class="btn sm" bindtap="doCheckin">{{checkedIn?'已打卡':'今日打卡'}}</view>
+  </view>
+
+  <!-- 每日计划 -->
+  <view class="card">
+    <view class="card-title">今日任务</view>
+    <view wx:for="{{today.tasks}}" wx:key="id" class="list-item row">
+      <view style="flex:1">{{item.name}}</view>
+      <checkbox class="checkbox" checked="{{checked[item.id]}}" bindtap="toggleTask" data-id="{{item.id}}" color="#9B7CB8"/>
+    </view>
+  </view>
+
+  <!-- 知识点 -->
+  <view class="card">
+    <view class="card-title">
+      <text>今日知识点 · {{today.focus}}</text>
+      <text wx:if="{{today.weak}}" class="tag weak">🔥 薄弱强化</text>
+    </view>
+    <view wx:if="{{today.weakHint}}" class="warn">{{today.weakHint}}</view>
+    <view style="font-weight:600;font-size:30rpx;margin-bottom:10rpx">{{today.knowledge.title}}</view>
+    <view wx:for="{{today.knowledge.points}}" wx:key="*this" class="muted" style="margin:6rpx 0">· {{item}}</view>
+    <view style="margin-top:14rpx">
+      <text class="tag" wx:for="{{today.drill}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 申论素材 -->
+  <view class="card">
+    <view class="card-title">申论每日推送</view>
+    <view wx:for="{{today.shenlun.dailyWords}}" wx:key="standard" class="list-item">
+      <view><text class="tag">{{item.topic}}</text> {{item.oral}}</view>
+      <view class="muted" style="margin-top:4rpx">规范：{{item.standard}}</view>
+    </view>
+    <view class="ok" style="margin-top:10rpx">📜 {{today.shenlun.dailyQuote.text}}（{{today.shenlun.dailyQuote.topic}}·{{today.shenlun.dailyQuote.pos}}）</view>
+  </view>
+
+  <!-- 待复盘 -->
+  <view class="card" wx:if="{{today.reviewDue.length}}">
+    <view class="card-title">待复盘错题（第3天）</view>
+    <view wx:for="{{today.reviewDue}}" wx:key="id" class="list-item" bindtap="goError">
+      <text class="tag">{{item.module}}</text> {{item.point}} <text class="muted">· 点击去复盘</text>
+    </view>
+  </view>
+
+  <view class="muted" style="text-align:center;padding:20rpx">明日：{{today.tomorrow}}</view>
+</view>

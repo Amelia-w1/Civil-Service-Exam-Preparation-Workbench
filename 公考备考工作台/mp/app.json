@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/today/today",
+    "pages/study/study",
+    "pages/quiz/quiz",
+    "pages/error/error",
+    "pages/mine/mine",
+    "pages/settings/settings",
+    "pages/shenlun/shenlun",
+    "pages/politics/politics",
+    "pages/mock/mock",
+    "pages/weakpoint/weakpoint"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#9B7CB8",
+    "navigationBarTitleText": "上岸搭子",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F0F7"
+  },
+  "tabBar": {
+    "color": "#969696",
+    "selectedColor": "#9B7CB8",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/today/today", "text": "今日", "iconPath": "assets/icons/today_n.png", "selectedIconPath": "assets/icons/today_s.png" },
+      { "pagePath": "pages/study/study", "text": "学习", "iconPath": "assets/icons/study_n.png", "selectedIconPath": "assets/icons/study_s.png" },
+      { "pagePath": "pages/quiz/quiz", "text": "练习", "iconPath": "assets/icons/quiz_n.png", "selectedIconPath": "assets/icons/quiz_s.png" },
+      { "pagePath": "pages/error/error", "text": "错题", "iconPath": "assets/icons/error_n.png", "selectedIconPath": "assets/icons/error_s.png" },
+      { "pagePath": "pages/mine/mine", "text": "我的", "iconPath": "assets/icons/mine_n.png", "selectedIconPath": "assets/icons/mine_s.png" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

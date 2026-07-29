@@ -1,0 +1,58 @@
+{
+  "words": [],
+  "quotes": [],
+  "frameworks": [
+    "概括(是什么)→分析(为什么)→对策(怎么办)→公文/升华"
+  ],
+  "docs": [
+    {
+      "type": "建议书",
+      "title": "关于……的建议",
+      "salutation": "有",
+      "sign": "发文机关+日期",
+      "note": "对策为主"
+    },
+    {
+      "type": "演讲稿",
+      "title": "关于……的演讲",
+      "salutation": "有",
+      "sign": "一般无",
+      "note": "有感染力"
+    },
+    {
+      "type": "通报",
+      "title": "关于……的通报",
+      "salutation": "无/有",
+      "sign": "发文机关+日期",
+      "note": "知照性"
+    },
+    {
+      "type": "倡议书",
+      "title": "关于……的倡议书",
+      "salutation": "有",
+      "sign": "倡议方+日期",
+      "note": "号召性"
+    },
+    {
+      "type": "短文",
+      "title": "无/自拟",
+      "salutation": "无",
+      "sign": "无",
+      "note": "评论文"
+    },
+    {
+      "type": "提纲",
+      "title": "关于……的提纲",
+      "salutation": "无",
+      "sign": "无",
+      "note": "分条列点"
+    },
+    {
+      "type": "公开信",
+      "title": "致……的一封信",
+      "salutation": "有",
+      "sign": "写信人+日期",
+      "note": "沟通性"
+    }
+  ]
+}

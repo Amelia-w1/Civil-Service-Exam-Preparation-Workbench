@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="card">
+    <view class="card-title">各模块薄弱考点</view>
+    <view wx:for="{{['资料分析','言语理解','判断推理','数量关系','常识判断']}}" wx:key="*this" class="list-item">
+      <view style="font-weight:600">{{item}}</view>
+      <view style="margin-top:6rpx">
+        <text class="tag weak" wx:for="{{mp[item].weak}}" wx:for-item="w" wx:key="*this">{{w}}</text>
+        <text wx:if="{{!mp[item].weak.length}}" class="muted">暂无</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">待复盘错题（{{unreviewed.length}}）</view>
+    <view wx:for="{{unreviewed}}" wx:key="id" class="list-item">
+      <view><text class="tag">{{item.module}}</text> <text class="tag weak">{{item.reason}}</text></view>
+      <view style="margin-top:6rpx;font-weight:600">{{item.point}}</view>
+      <view wx:if="{{item.note}}" class="muted">{{item.note}}</view>
+      <text class="btn ghost sm" style="margin-top:10rpx" bindtap="review" data-id="{{item.id}}">标记已复盘</text>
+    </view>
+    <view wx:if="{{!unreviewed.length}}" class="placeholder">全部复盘完毕，继续保持 💪</view>
+  </view>
+</view>

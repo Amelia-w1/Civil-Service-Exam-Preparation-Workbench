@@ -1,0 +1,68 @@
+/* 上岸搭子 · 全局样式（藕粉紫主题） */
+page {
+  --brand: #9B7CB8;
+  --brand-deep: #7E5FA0;
+  --brand-soft: #C9B6D8;
+  --bg: #F5F0F7;
+  --card: #FFFFFF;
+  --text: #3A3340;
+  --muted: #9A93A3;
+  --line: #ECE6F0;
+  --red: #E06B6B;
+  --green: #5AAE8C;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+}
+
+.container { padding: 24rpx; }
+.card {
+  background: var(--card);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(155, 124, 184, 0.08);
+}
+.card-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--brand-deep);
+  margin-bottom: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.muted { color: var(--muted); font-size: 24rpx; }
+.row { display: flex; align-items: center; justify-content: space-between; }
+.tag {
+  display: inline-block;
+  font-size: 22rpx;
+  color: var(--brand-deep);
+  background: #F0E9F6;
+  border-radius: 8rpx;
+  padding: 4rpx 14rpx;
+  margin: 6rpx 6rpx 0 0;
+}
+.tag.weak { background: #FBE9E9; color: var(--red); }
+.btn {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 14rpx;
+  padding: 18rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+}
+.btn.ghost { background: #fff; color: var(--brand-deep); border: 2rpx solid var(--brand-soft); }
+.btn.sm { display: inline-block; padding: 10rpx 24rpx; font-size: 24rpx; border-radius: 10rpx; }
+.list-item {
+  padding: 22rpx 0;
+  border-bottom: 2rpx solid var(--line);
+}
+.list-item:last-child { border-bottom: none; }
+.checkbox { transform: scale(0.8); }
+.days { font-size: 56rpx; font-weight: 700; color: var(--brand-deep); }
+.pill { font-size: 22rpx; color:#fff; background:var(--brand-soft); border-radius:999rpx; padding:4rpx 16rpx; }
+.warn { background:#FBE9E9; color:var(--red); border-radius:12rpx; padding:16rpx; font-size:24rpx; margin-bottom:16rpx; }
+.ok { background:#E9F5EF; color:var(--green); border-radius:12rpx; padding:16rpx; font-size:24rpx; }
+.placeholder { color: var(--muted); text-align:center; padding:60rpx 0; }

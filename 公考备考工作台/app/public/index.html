@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>上岸搭子 · 公考备考工作台</title>
+<meta name="theme-color" content="#9B7CB8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="上岸搭子">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <!-- 左侧导航栏 -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">💜</div>
+      <div class="brand-name">这次就上岸</div>
+      <div class="brand-sub" id="brandStage">国考+省考 · 基础学习期</div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-group">备考日常</div>
+      <div class="nav-item active" data-page="today">
+        <span class="nav-icon">✅</span><span class="nav-text">每日任务</span>
+      </div>
+      <div class="nav-item" data-page="checkin">
+        <span class="nav-icon">📅</span><span class="nav-text">月打卡</span>
+      </div>
+      <div class="nav-item" data-page="countdown">
+        <span class="nav-icon">⏰</span><span class="nav-text">考试倒计时</span>
+      </div>
+
+      <div class="nav-group">学习专区</div>
+      <div class="nav-item" data-page="xingce">
+        <span class="nav-icon">📚</span><span class="nav-text">板块学习</span>
+      </div>
+      <div class="nav-item" data-page="quiz">
+        <span class="nav-icon">📝</span><span class="nav-text">题库练习</span>
+      </div>
+      <div class="nav-item" data-page="shenlun">
+        <span class="nav-icon">✍️</span><span class="nav-text">申论素材</span>
+      </div>
+      <div class="nav-item" data-page="politics">
+        <span class="nav-icon">📰</span><span class="nav-text">时政热点</span>
+      </div>
+
+      <div class="nav-group">复盘诊断</div>
+      <div class="nav-item" data-page="error">
+        <span class="nav-icon">📕</span><span class="nav-text">错题收集</span>
+      </div>
+      <div class="nav-item" data-page="weakpoint">
+        <span class="nav-icon">🔍</span><span class="nav-text">易错考点</span>
+      </div>
+      <div class="nav-item" data-page="mock">
+        <span class="nav-icon">📈</span><span class="nav-text">模考分析</span>
+      </div>
+
+      <div class="nav-group">系统</div>
+      <div class="nav-item" data-page="overview">
+        <span class="nav-icon">📊</span><span class="nav-text">全局进度</span>
+      </div>
+      <div class="nav-item" data-page="settings">
+        <span class="nav-icon">⚙️</span><span class="nav-text">设置</span>
+      </div>
+    </nav>
+
+    <div class="side-foot">
+      <button class="side-btn" id="exportBtn">⬇ 导出数据</button>
+      <button class="side-btn" id="importBtn">⬆ 导入数据</button>
+      <div class="side-pet">🐱</div>
+    </div>
+  </aside>
+
+  <!-- 右侧主内容 -->
+  <main class="main">
+    <!-- 顶栏 -->
+    <header class="topbar">
+      <div class="tb-left">
+        <div class="tb-date" id="tbDate">--</div>
+        <div class="tb-wday" id="tbWday">--</div>
+      </div>
+      <div class="tb-mid">
+        <div class="tb-pill"><span class="tb-dot gk"></span>国考 <b id="cntGk">—</b> 天</div>
+        <div class="tb-pill"><span class="tb-dot sk"></span>省考 <b id="cntSk">—</b> 天</div>
+        <div class="tb-pill"><span class="tb-dot day"></span>已学 <b id="cntDay">—</b> 天</div>
+      </div>
+      <div class="tb-right">
+        <div class="tb-pill soft">每日提醒 · 今日已学 <b id="todayDone">0%</b></div>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <section class="content" id="screen"></section>
+  </main>
+
+  <!-- 手机底部 Tab 栏（窄屏显示） -->
+  <nav class="tabbar" id="tabbar">
+    <div class="tab-item" data-page="today"><span class="ti-icon">📅</span><span class="ti-text">今日</span></div>
+    <div class="tab-item" data-page="xingce"><span class="ti-icon">📚</span><span class="ti-text">学习</span></div>
+    <div class="tab-item" data-page="quiz"><span class="ti-icon">📝</span><span class="ti-text">练习</span></div>
+    <div class="tab-item" data-page="error"><span class="ti-icon">📕</span><span class="ti-text">错题</span></div>
+    <div class="tab-item" data-page="more"><span class="ti-icon">☰</span><span class="ti-text">更多</span></div>
+  </nav>
+</div>
+
+<div id="toast" class="toast"></div>
+<input type="file" id="fileImport" accept="application/json" style="display:none">
+<script src="app.js"></script>
+</body>
+</html>

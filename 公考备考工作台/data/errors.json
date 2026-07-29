@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1785319561176,
+    "date": "2026-07-29",
+    "module": "常识判断",
+    "point": "文史·四书五经",
+    "reason": "知识点不熟",
+    "myAnswer": "D",
+    "correct": "B",
+    "solution": "四书指《大学》《中庸》《论语》《孟子》；《诗经》属“五经”。选B。",
+    "qid": 1081,
+    "fromBank": true,
+    "reviewed": false,
+    "reviewDate": "2026-08-01"
+  },
+  {
+    "id": 1785319464233,
+    "date": "2026-07-29",
+    "module": "言语理解",
+    "point": "逻辑填空·成语",
+    "reason": "知识点不熟",
+    "myAnswer": "D",
+    "correct": "B",
+    "solution": "前文“开除概括不了的同类事物以维护纯洁性”是解释类对应，“削足适履”比喻迁就现成条件、生搬硬套，正合此意。选B。",
+    "qid": 1038,
+    "fromBank": true,
+    "reviewed": false,
+    "reviewDate": "2026-08-01"
+  }
+]

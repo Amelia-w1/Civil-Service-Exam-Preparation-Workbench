@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="card">
+    <view style="font-size:34rpx;font-weight:700">{{profile.name||'同学'}} · {{profile.examTarget||'国考+省考'}}</view>
+    <view class="muted" style="margin-top:6rpx">阶段：{{profile.stage||'基础学习中'}} · 每日 {{profile.dailyHours||'3-4'}} 小时</view>
+  </view>
+
+  <view class="card row">
+    <view style="flex:1;text-align:center"><view class="days">{{progress.totalDays||0}}</view><view class="muted">坚持天数</view></view>
+    <view style="flex:1;text-align:center"><view class="days">{{progress.totalQuestions||0}}</view><view class="muted">刷题量</view></view>
+    <view style="flex:1;text-align:center"><view class="days">{{progress.totalErrors||0}}</view><view class="muted">错题</view></view>
+    <view style="flex:1;text-align:center"><view class="days">{{progress.mockCount||0}}</view><view class="muted">模考</view></view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">功能</view>
+    <view class="list-item" bindtap="go" data-url="/pages/settings/settings">✏️ 设置资料 ›</view>
+    <view class="list-item" bindtap="go" data-url="/pages/shenlun/shenlun">📝 申论素材 ›</view>
+    <view class="list-item" bindtap="go" data-url="/pages/politics/politics">📰 时政热点 ›</view>
+    <view class="list-item" bindtap="go" data-url="/pages/mock/mock">📊 模考记录 ›</view>
+    <view class="list-item" bindtap="go" data-url="/pages/weakpoint/weakpoint">🎯 薄弱点分析 ›</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">数据</view>
+    <view class="warn">首次使用请点下面按钮，把题库/知识点/错题等一次性导入云端（只需一次）。</view>
+    <view class="btn" bindtap="initData">⬇️ 初始化云端数据（首次必点）</view>
+  </view>
+
+  <view class="muted" style="text-align:center;padding:20rpx">上岸搭子 · 微信小程序</view>
+</view>
